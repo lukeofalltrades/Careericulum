@@ -9,7 +9,7 @@
   </folder>
   <folder name="css">
     <file name="site_global.css" crc="3891685468"/>
-    <file name="index.css" crc="4254679729" ref="index"/>
+    <file name="index.css" crc="5468660" ref="index"/>
   </folder>
   <folder name="scripts">
     <file name="jquery-1.8.3.min.js" crc="3828297711" ref="index"/>
@@ -22,5 +22,5 @@
     <file name="jquery.museoverlay.js" crc="466079611" ref="index"/>
     <file name="touchswipe.js" crc="261777990" ref="index"/>
   </folder>
-  <file name="index.html" crc="90937782" mt="1385683066392" redirect="true"/>
+  <file name="index.html" crc="493511416" mt="1387160320646" redirect="true"/>
 </manifest>
