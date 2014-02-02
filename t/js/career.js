@@ -1,8 +1,37 @@
+
+
+var url = "https://careericulum.firebaseio.com/";
+
+
+$(document).ready(function() {
+    
+	var pepe = $.fn.fullpage({
+		slidesColor: ['whitesmoke', '#1bbc9b','#4BBFC3'],//, '#7BAABE', '#ccddff'],
+		anchors: ['profile', 'overview', 'next'],
+		menu: '#menu'
+	});
+    
+    
+    
+    
+    
+	
+});
+
+
+
 function loadData() {
   IN.API.Profile("me")
     .fields(["id", "firstName", "lastName", "pictureUrl","headline","publicProfileUrl",'positions'])
     .result(function(result) {
-      profile = result.values[0];
+        
+        profile = result.values[0];
+      var linkedIn = new Firebase(url+profile.id + '/profile');
+      var stats = new Firebase(url+profile.id + '/stats')
+        
+
+      linkedIn.set(profile);
+      
       drawTimeline(profile.positions.values)
       
       google.setOnLoadCallback(function(){ drawTimeline(profile.positions.values) });
@@ -17,6 +46,28 @@ function loadData() {
       profHTML += "</div>"; 
       profHTML += "";
       $("#dynamic_load").html(profHTML);
+      
+      
+      $('.dragger').draggable({ containment: "#grid_items",
+              //grid:[50,50],
+              stop: function(){
+                  var data_key = $(this).data('name'),
+                  parent = $('#grid_items').offset()
+                      offset = $(this).offset(),
+                      xPos = parent.left - offset.left,
+                      yPos = parent.top - offset.top;
+                      
+
+                      //$(this).text('x: ' + xPos + 'y: ' + yPos);
+
+                var stats = new Firebase(url+profile.id + '/stats/'+data_key)
+                  stats.set([xPos,yPos]);
+              }
+
+
+   });
+      
+      
     });
 }
 

@@ -25,27 +25,12 @@
         </script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>	
-    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization',
-           'version':'1','packages':['timeline']}]}"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['timeline']}]}"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
 	
     
     <script type="text/javascript" src="js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="js/career.js"></script>
-    
-	<script type="text/javascript">
-		$(document).ready(function() {
-            
-			var pepe = $.fn.fullpage({
-				slidesColor: ['whitesmoke', '#1bbc9b','#4BBFC3'],//, '#7BAABE', '#ccddff'],
-				anchors: ['profile', 'overview', 'next'],
-				menu: '#menu'
-			});
-			
-		});
-        
-
-
-	</script>
 
 </head>
 <body>
@@ -64,13 +49,24 @@
 </div>
 
 <div class="section" id="section1">
+    <h1>SWOT</h1>
+    <div id='gridwrapper' style="width:800px;margin:auto;">
+        <div id="items" style="float:left;">
+            <div class="dragger" data-name="proj">Project Management</div>
+            <div class="dragger" data-name="skills">Skills</div>
+            <div class="dragger" data-name="pres">Presentation</div>
+            <div class="dragger" data-name="stuff1">other stuff</div>
+            <div class="dragger" data-name="stuff2">other other stuff</div>
+        </div>
+        <div id="grid_items" style="float:right;width:600px;height:600px;border:1px solid black;background:rgba(228, 228, 228, 0.43);">
+        </div>
+    </div>
+</div>
+<div class="section" id="section2">
     <div class="slide active"><div class="wrap"><h1>Whats Next?</h1></div></div>
     <div class="slide"><h1>We are going to take your data and run some magic on it</h1></div>
     <div class="slide"><h1>Abracadabra!</h1></div>
     <div class="slide"><h1>And send you some next steps to help you advance your career!</h1></div>
-</div>
-<div class="section" id="section2">
-    test
 </div>
 
 
