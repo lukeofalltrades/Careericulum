@@ -13,7 +13,30 @@
 		    },
 		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 		  })(document);
+          
+          
+          function loadData() {
+            IN.API.Profile("me")
+              .fields(["id", "firstName", "lastName", "pictureUrl","headline","publicProfileUrl",'positions'])
+              .result(function(result) {
+                profile = result.values[0];
+                profHTML = "<p><a href=\"" + profile.publicProfileUrl + "\">";
+                profHTML += "<img class=img_border align=\"left\" src=\"" + profile.pictureUrl + "\"></a>";      
+                profHTML += "<a href=\"" + profile.publicProfileUrl + "\">";
+                profHTML += "<h2 class=myname>" + profile.firstName + " " + profile.lastName + "</a> </h2>";
+                profHTML += "<span class=myheadline>" + profile.headline + "</span>";
+                $("#profile").html(profHTML);
+              });
+          }
+          
 		</script>
+        
+        <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+          api_key: 77h7ybofvfccph
+          authorize: true
+        </script>
+        
+        
         
 		<script src="/javascripts/modern.js"></script>
 		<link rel="stylesheet" href="/css/parralax.css">
@@ -23,7 +46,7 @@
     
 	<nav class="visible">
 		<ul>
-			<li><a href="#agency" class="slide" rel="agency">Home</a></li>
+			<li><a href="#home" class="slide" rel="agency">Home</a></li>
 			<li><a href="#linkin" class="slide" rel="experience">Join</a></li>
 			<li><a href="#contact" class="slide" rel="contact">Contact</a></li>
 		</ul>
@@ -43,65 +66,18 @@
 		</section>
         <a name="linkin"></a>
 		<section class="people" rel="linkin">
-			<h2>Lorem</h2>
-
-		</section>
-
-		<section class="logos" rel="experience">
-			<h2>asd fasdf </h2>
-			<p class="sub-heading">asd fasdf adsf asdf</p>
             
-			<a href="" class="services-btn">asd fasdf adsf </a>
-			<div class="overlay">
-				<a href="" class="close-btn"></a>
-				<ul>
-					<li>asdasd fasdf ding
-						<ul>
-							<li>asdf .</li>
-							<li>asdf sdf asdstitioning.</li>
-							<li>as df sdfasdftity.</li>
-							<li>asdf asd fasdf.</li>
+            <h2>Learn more about where you are now</h2>
 
-						</ul>
-					</li>
-					<li>Digital
-						<ul>
-							<li>asdfadf asdfperience.</li>
-							<li>asdfadf asdfe &amp; Applications.</li>
-							<li>asdfadf asdfping.</li>
-							<li>asdfadf asdf</li>
-							<li>asdfadf asdfive Development.</li>
-							<li>asdfadf asdfent.</li>
-						</ul>
-					</li>
-					<li>Print
-						<ul>
-							<li>zxasdf asdfasdftems.</li>
-						</ul>
-					</li>
-					<li>Social
-						<ul>
-							<li>xcvzsdasdfa</li>
-							<li>xcvzsdasdfa.</li>
-							<li>xcvzsdasdfat.</li>
-							<li>xcvzsdasdfa.</li>
-							<li>xcvzsdasdfa.</li>
-						</ul>
-					</li>
-					<li>Production
-						<ul>
-							<li>xcvdfsgfgsdfg.</li>
-							<li>xcvdfsgfgsdfgCommuni.</li>
-							<li>xcvdfsgfgsdfg</li>
-							<li>xcvdfsgfgsdfgtion.</li>
-							<li>xcvdfsgfgsdfg</li>
-						</ul>
-					</li>
-					<li class="coming-soon">Partners section coming soon</li>
-				</ul>
-			</div>
+            
+            <div id="profile">
+            </div>
+
+                <script type="IN/Login" data-onAuth="loadData"></script>
+
 		</section>
 
+        <a name="info"></a>
 		<section class="core-values" rel="values">
 			<h2>Guided by core values.</h2>
 			<div class="framed-content">
@@ -116,6 +92,7 @@
 			</div>
 		</section>
 
+        <a name="contact"></a>
 		<section class="contact" rel="contact">
 			<h2>Contact.</h2>
 			<div id="formSuccess">

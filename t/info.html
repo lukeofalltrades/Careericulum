@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<title>Careericulum</title>
+	<meta name="author" content="Careericulum " />
+	<meta name="description" content="Careericulum will help direct your job improvements" />
+	<meta name="keywords"  content="" />
+	<meta name="Resource-type" content="Document" />
+
+	
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/demoPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/callback.css" />
+	
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+        <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+          api_key: 77h7ybofvfccph
+          authorize: true
+        </script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>	
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization',
+           'version':'1','packages':['timeline']}]}"></script>
+	
+    
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/career.js"></script>
+    
+	<script type="text/javascript">
+		$(document).ready(function() {
+            
+			var pepe = $.fn.fullpage({
+				slidesColor: ['whitesmoke', '#1bbc9b','#4BBFC3'],//, '#7BAABE', '#ccddff'],
+				anchors: ['profile', 'overview', 'next'],
+				menu: '#menu'
+			});
+			
+		});
+        
+
+
+	</script>
+
+</head>
+<body>
+
+    
+<ul id="menu">
+	<li data-menuanchor="profile"><a href="#profile">First slide</a></li>
+<script type="IN/Login" data-onAuth="loadData"></script>
+	<li data-menuanchor="overview" class="post_login"><a href="#overview">Second slide</a></li>
+	<li data-menuanchor="next" class="post_login"><a href="#next">Third slide</a></li>
+</ul>
+
+<div class="section" id="section0" style="padding:40px;">
+    <div id="dynamic_load"></div>
+    <div id='timeline' style='width: 80%; height: 70%;margin:auto;padding-top:20px'></div>
+</div>
+
+<div class="section" id="section1">
+    <div class="slide active"><div class="wrap"><h1>Whats Next?</h1></div></div>
+    <div class="slide"><h1>We are going to take your data and run some magic on it</h1></div>
+    <div class="slide"><h1>Abracadabra!</h1></div>
+    <div class="slide"><h1>And send you some next steps to help you advance your career!</h1></div>
+</div>
+<div class="section" id="section2">
+    test
+</div>
+
+
+
+</body>
+</html>
