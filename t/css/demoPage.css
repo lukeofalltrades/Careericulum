@@ -5,6 +5,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
     padding: 0;
     margin: 0;
+    font-size:14px;
 }
 a{
 	text-decoration:none;
@@ -193,10 +194,11 @@ p{
 
 .dragger {
     margin: 10px;
-    padding:10px;
+    padding:15px;
     color: #000;
     background: #fff;
     background: rgba(255,255,255, 0.5);
     -webkit-border-radius: 10px;
     border-radius: 10px;
+    cursor:pointer;
 }

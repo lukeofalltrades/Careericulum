@@ -76,9 +76,14 @@ function loadData() {
          var data_key = $(this).data('name');
          var dataRef = new Firebase(url+profile.id + '/stats/'+data_key);
          dataRef.once('value', function(snapshot) {
-             var left_axis = snapshot.val()[0];
-             var top_axis = snapshot.val()[1];
-             $("div").find("[data-name='" + data_key + "']").css({top: top_axis,left: left_axis});
+             if(snapshot.val()) {
+                 
+                 var left_axis = snapshot.val()[0];
+                 var top_axis = snapshot.val()[1] - $("div").find("[data-name='" + data_key + "']").data('offsetheight');
+                 $("div").find("[data-name='" + data_key + "']").css({top: top_axis,left: left_axis});
+             } else {
+                 
+             }
              
          });
      
