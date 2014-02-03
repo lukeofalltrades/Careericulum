@@ -63,7 +63,7 @@ function loadData() {
                       yPos =  offset.top - parent.top;
                       
 
-                      $(this).text('x: ' + xPos + 'y: ' + yPos);
+                      //$(this).text('x: ' + xPos + 'y: ' + yPos);
 
                 var stats = new Firebase(url+profile.id + '/stats/'+data_key)
                   stats.set([xPos,yPos]);
@@ -74,12 +74,10 @@ function loadData() {
    
    $( ".dragger" ).each(function() {
          var data_key = $(this).data('name');
-         $(this).data('done','yes');
          var dataRef = new Firebase(url+profile.id + '/stats/'+data_key);
          dataRef.once('value', function(snapshot) {
              var left_axis = snapshot.val()[0];
              var top_axis = snapshot.val()[1];
-             console.log(left_axis,top_axis);
              $("div").find("[data-name='" + data_key + "']").css({top: top_axis,left: left_axis});
              
          });
