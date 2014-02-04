@@ -6,8 +6,8 @@ var url = "https://careericulum.firebaseio.com/";
 $(document).ready(function() {
     
 	var pepe = $.fn.fullpage({
-		slidesColor: ['whitesmoke', '#1bbc9b','#4BBFC3'],//, '#7BAABE', '#ccddff'],
-		anchors: ['profile', 'overview', 'next'],
+		slidesColor: ['whitesmoke', '#7BAABE','#1bbc9b','#4BBFC3'],//, '#7BAABE', '#ccddff'],
+		anchors: ['profile', 'general','overview', 'next'],
 		menu: '#menu'
 	});
     
