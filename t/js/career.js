@@ -14,27 +14,27 @@ $(document).ready(function() {
     });
 
 
-
-
-
-
 });
 
 
 
 function loadData() {
     IN.API.Profile("me")
-        .fields(["id", "firstName", "lastName", "pictureUrl", "headline", "publicProfileUrl", 'positions'])
+        .fields(["id", "firstName", "lastName", "pictureUrl", "headline", "publicProfileUrl", 'positions','educations'])
         .result(function(result) {
+            
 
             var profile = result.values[0],
                 linkedIn = new Firebase(url + profile.id + '/profile'),
-                stats = new Firebase(url + profile.id + '/stats')
+                stats = new Firebase(url + profile.id + '/stats');
+                
+                console.log(profile);
 
 
             linkedIn.set(profile);
             drawTimeline(profile.positions.values);
-            google.setOnLoadCallback(function() {drawTimeline(profile.positions.values)});
+
+            //drawEducationTimeline(profile.educations.values);
 
             profHTML = "<div id='profileimage'>";
             profHTML += "<a href='" + profile.publicProfileUrl + "'>";
@@ -161,6 +161,34 @@ function drawTimeline(positions) {
                 [value.title, value.company.name, new Date(value.startDate.year, value.startDate.month, 1), new Date(value.endDate.year, value.endDate.month, 30)]
             ]);
         }
+
+    });
+    chart.draw(dataTable);
+}
+function drawEducationTimeline(positions) {
+    var container = document.getElementById('timeline2'),
+        chart = new google.visualization.Timeline(container),
+        dataTable = new google.visualization.DataTable();
+
+
+    dataTable.addColumn({
+        type: 'string',
+        id: 'Name'
+    });
+    dataTable.addColumn({
+        type: 'date',
+        id: 'Start'
+    });
+    dataTable.addColumn({
+        type: 'date',
+        id: 'End'
+    });
+
+    $.each(positions, function(index, value) {
+
+            dataTable.addRows([
+                [value.schoolName, new Date(value.startDate.year, 9, 1), new Date(value.endDate.year, 5, 30)]
+            ]);
 
     });
     chart.draw(dataTable);
