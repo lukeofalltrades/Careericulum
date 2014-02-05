@@ -9,10 +9,13 @@
 	<meta name="keywords"  content="" />
 	<meta name="Resource-type" content="Document" />
 
-	
+
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-	<link rel="stylesheet" type="text/css" href="css/demoPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/career.css" />
 	
+
+    
 	<!--[if IE]>
 		<script type="text/javascript">
 			 var console = { log: function() {} };
@@ -27,21 +30,24 @@
     <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['timeline']}]}"></script>
     <script src="https://cdn.firebase.com/v0/firebase.js"></script>
 	
-    
+
+    <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="js/career.js"></script>
 
 </head>
 <body>
-
+    <div id="spinner"></div>
     
 <ul id="menu">
 	<li data-menuanchor="profile"><a href="#profile">Profile</a></li>
 <script type="IN/Login" data-onAuth="loadData"></script>
 	<li data-menuanchor="general" class="post_login"><a href="#general">General Information</a></li>
 	<li data-menuanchor="overview" class="post_login"><a href="#overview">Career Foundation</a></li>
+	<li data-menuanchor="accessors" class="post_login"><a href="#accessors">Selecting assessors</a></li>
 	<li data-menuanchor="next" class="post_login"><a href="#next">More Information</a></li>
 </ul>
+<div id="careericulum_logo"><img src="img/logo.png" style='height:300px'></div>
 
 <div class="section" id="section0" style="padding:40px;">
     <div id="dynamic_load"></div>
@@ -88,13 +94,60 @@
             <div class="dragger" data-name="team_management" data-offsetheight="230">Team Management</div>
             <div class="dragger" data-name="organizational_awareness" data-offsetheight="287">Organizational<br>Awareness</div>
         </div>
-        <div id="grid_items" style="float:right;width:600px;height:600px;background:url(img/arrows.png) 0px 50px;background-size: 100%;background-repeat:no-repeat;">
-            <div id='strength' style="font-weight:bold;position:relative;top:40px;">Strength</div>
-            <div id='important' style="font-weight:bold;position:relative;top:300px;left:300px;">Importance</div>
+        <div id="grid_items" style="float:right;width:600px;height: 500px;background:url(img/arrows.png) 0px 10px;background-size: 100%;background-repeat:no-repeat;">
+            <div id='strength' style="font-weight:bold;position:relative;top:0px;">Strength</div>
+            <div id='important' style="font-weight:bold;position:relative;top: 225px;left: 350px;">Importance</div>
         </div>
     </div>
 </div>
 <div class="section" id="section3">
+    <h1>Selecting assessors</h1>
+    <p>Performance feedback is the most critical part of your development; imagine a quarterback only receiving coaching at the end of a season, and you can see why we need to invest in our ongoing development.</p>
+    <p>Pick five initial respondents to evaluate your performance. Each month during your work season, we will collect additional real time feedback from your baseline respondents and new reviewers.
+ </p>
+    <div id='accesorslists' style="width:80%;margin:auto;">
+        
+            <div class="accessor_boxes"><h2>Direct Supervisor</h2>
+                <ul class="addableul" contenteditable="true">
+                    
+                </ul>
+                <form id='supervisors' class="add"  action="#" method="POST">
+                    <label>Add a person</label><br/>
+                    <input class= "name_field" name="name" id="name1" type="text" placeholder="Name" />
+                    <input class= "email_field" name="email" id="email1" type="text" placeholder="Email" /><br/>
+                        <input type="submit" value="Submit" />
+			    
+                </form> 
+            </div>
+            <div class="accessor_boxes"><h2>Peers</h2>
+
+                <ul class="addableul" contenteditable="true">
+                    
+                </ul>
+                <form id='peers' class="add" action="#" method="POST">
+                    <label>Add a person</label><br/>
+                    <input class= "name_field" name="name" id="name2" type="text" placeholder="Name" />
+                    <input class= "email_field" name="email" id="email2" type="text" placeholder="Email" /><br/>
+                        <input type="submit" value="Submit" />
+			    
+                </form> 
+            </div>
+            <div class="accessor_boxes"><h2>Direct Reports</h2>
+
+                <ul class="addableul" contenteditable="true">
+                    
+                </ul>
+                <form id='reports' class="add"  action="#" method="POST">
+                    <label>Add a person</label><br/>
+                    <input class= "name_field" name="name" id="name3" type="text" placeholder="Name" />
+                    <input class= "email_field" name="email" id="email3" type="text" placeholder="eEmail" /><br/>
+                        <input type="submit" value="Submit" />
+			    
+                </form> 
+            </div>
+    </div>
+</div>
+<div class="section largeh1" id="section4">
     <div class="slide active"><div class="wrap"><h1>What's next?</h1></div></div>
     <div class="slide"><h1>We are going to take your data and run some magic on it</h1></div>
     <div class="slide"><h1>Abracadabra!</h1></div>
