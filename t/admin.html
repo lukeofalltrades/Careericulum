@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<title>Careericulum</title>
+	<meta name="author" content="Careericulum " />
+	<meta name="description" content="Careericulum will help direct your job improvements" />
+	<meta name="keywords"  content="" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/career.css" />
+	
+
+    
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>	
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['timeline']}]}"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	
+
+	<script type="text/javascript">
+    var url = "https://careericulum.firebaseio.com/";
+    var profile = new Firebase(url);
+    
+profile.once('value', function(snapshot) {
+            if (snapshot.val()) {
+                
+                $.each(snapshot.val(), function( index, value ) {
+                    $('#list').append('<li><a href="profile.html?id='+value.profile.id +'">'+value.profile.firstName + ' '+ value.profile.lastName +'</a></li>');
+                });
+            }
+
+        });
+        
+        
+    </script>
+
+</head>
+<body>
+    <ul id="list">
+        </ul>
+    
+</body>
+</html>
