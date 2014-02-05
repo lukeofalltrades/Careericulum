@@ -34,7 +34,7 @@ function loadData() {
             linkedIn.set(profile);
             drawTimeline(profile.positions.values);
 
-            //drawEducationTimeline(profile.educations.values);
+            drawEducationTimeline(profile.educations.values);
 
             profHTML = "<div id='profileimage'>";
             profHTML += "<a href='" + profile.publicProfileUrl + "'>";
