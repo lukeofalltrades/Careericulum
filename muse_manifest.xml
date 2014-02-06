@@ -1,26 +1,26 @@
 <manifest alg="2" build="329" opt="false" iceEnabled="true">
-  <folder name="images">
-    <file name="tree skinny.png" crc="412467000" ref="index"/>
-    <file name="clickplay.jpg" crc="3905507641" ref="index"/>
-    <file name="1385526264_115.png" crc="4162190936" ref="index"/>
-    <file name="1385526259_73.png" crc="127902402" ref="index"/>
-    <file name="1385526262_71.png" crc="79845485" ref="index"/>
-    <file name="slice1.png" crc="3890175828" ref="index"/>
-  </folder>
   <folder name="css">
-    <file name="site_global.css" crc="3891685468"/>
-    <file name="index.css" crc="5468660" ref="index"/>
+    <file name="site_global.css" crc="490126868"/>
+    <file name="index.css" crc="496292280" ref="index"/>
+    <file name="iefonts_index.css" crc="4160203891" ref="index"/>
+    <file name="lesson-page.css" crc="3833601816" ref="lesson-page"/>
   </folder>
   <folder name="scripts">
-    <file name="jquery-1.8.3.min.js" crc="3828297711" ref="index"/>
-    <file name="museutils.js" crc="117816282" ref="index"/>
-    <file name="jquery.scrolleffects.js" crc="3963828924" ref="index"/>
-    <file name="jquery.watch.js" crc="4199601726" ref="index"/>
-    <file name="pie.js" crc="4147615982" ref="index"/>
-    <file name="webpro.js" crc="33264525" ref="index"/>
-    <file name="musewpslideshow.js" crc="272207905" ref="index"/>
-    <file name="jquery.museoverlay.js" crc="466079611" ref="index"/>
-    <file name="touchswipe.js" crc="261777990" ref="index"/>
+    <file name="jquery-1.8.3.min.js" crc="3828297711" ref="index:lesson-page"/>
+    <file name="museutils.js" crc="117816282" ref="index:lesson-page"/>
+    <file name="jquery.tobrowserwidth.js" crc="152985095" ref="index:lesson-page"/>
+    <file name="jquery.watch.js" crc="4199601726" ref="index:lesson-page"/>
+    <file name="pie.js" crc="4147615982" ref="lesson-page"/>
   </folder>
-  <file name="index.html" crc="493511416" mt="1387160320646" redirect="true"/>
+  <folder name="images">
+    <file name="tree skinny.png" crc="231311203" ref="index:lesson-page"/>
+    <file name="pasted image 512x512.png" crc="4028981555" ref="index"/>
+    <file name="beaker.png" crc="4162190936" ref="index"/>
+    <file name="target.png" crc="79845485" ref="index"/>
+    <file name="develop - report.png" crc="127902402" ref="index"/>
+    <file name="24380278_l.jpg" crc="3819419351" ref="index"/>
+    <file name="16145621_l.jpg" crc="296639841" ref="index"/>
+  </folder>
+  <file name="index.html" crc="3957505488" mt="1391704655094" redirect="true"/>
+  <file name="lesson-page.html" crc="532631352" mt="1391704673442" redirect="true"/>
 </manifest>
