@@ -27,9 +27,6 @@ function loadData() {
             var profile = result.values[0],
                 linkedIn = new Firebase(url + profile.id + '/profile'),
                 stats = new Firebase(url + profile.id + '/stats');
-                
-                console.log(profile);
-
 
             linkedIn.set(profile);
             drawTimeline(profile.positions.values);
@@ -94,7 +91,6 @@ function loadData() {
                     if (snapshot.val()) {
                         
                         $.each(snapshot.val(), function( index, value ) {
-                            console.log('<li>'+value.name + ' (' + value.email +')</li>');
                             parentitem.find('ul').append('<li>'+value.name + ' (' + value.email +')</li>');
                         });
                     }
